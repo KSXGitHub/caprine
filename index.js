@@ -253,10 +253,8 @@ app.on('ready', () => {
 			webContents.insertCSS(fs.readFileSync(path.join(__dirname, 'workchat.css'), 'utf8'));
 		}
 
-		if (argv['startup-window'] === false) {
+		if (argv.minimize) {
 			mainWindow.hide();
-		} else if (argv.minimize) {
-			mainWindow.minimize();
 		} else {
 			mainWindow.show();
 		}
